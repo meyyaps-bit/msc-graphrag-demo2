@@ -7,8 +7,7 @@ if (!process.env.NEO4J_PASSWORD) console.error("❌ Missing NEO4J_PASSWORD");
 
 export const driver = neo4j.driver(
   process.env.NEO4J_URI,
-  neo4j.auth.basic(process.env.NEO4J_USER, process.env.NEO4J_PASSWORD),
-  { encrypted: "ENCRYPTION_ON" }
+  neo4j.auth.basic(process.env.NEO4J_USER, process.env.NEO4J_PASSWORD)
 );
 
 export async function runCypher(query, params = {}) {
